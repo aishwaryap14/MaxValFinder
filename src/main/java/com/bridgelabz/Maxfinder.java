@@ -1,16 +1,13 @@
 package com.bridgelabz;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class Maxfinder {
     
-    public <E extends Comparable> E maxValuefinder(E num1, E num2, E num3) {
-        E max = num1;
-        if(max.compareTo(num2) < 0)
-            max = num2;
-        if(max.compareTo(num3) < 0)
-            max = num3;
-        return  max;
+    public <E extends Comparable> E maxValuefinder(E... values) {
+        return Arrays.stream(values).max((i, j)-> i.compareTo(j)).get();
+
     }
 
 
